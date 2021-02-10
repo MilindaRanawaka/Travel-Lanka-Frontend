@@ -1,0 +1,31 @@
+.custom-style-navbar{
+  background-color: #e3f2fd;
+}
+
+#navBarSearchForm {
+  width: 520px !important;
+  position: center;
+}
+
+#fullSearch{
+  margin-left: 20%;
+}
+
+.loged-info {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 1170px) {
+  #navBarSearchForm {
+      width: 420px !important;
+      position: center;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #navBarSearchForm {
+      width: 220px !important;
+      position: center;
+  }
+}
