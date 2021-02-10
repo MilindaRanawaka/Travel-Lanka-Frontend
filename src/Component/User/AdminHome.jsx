@@ -2,7 +2,7 @@ import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { serverUrl, TOKEN_ID } from "../config";
+import { serverUrl } from "../config";
 
 export default class AdminHome extends React.Component {
   constructor(props) {

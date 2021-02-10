@@ -92,7 +92,7 @@ export default class UpdateLocation extends React.Component {
                 <div className="d-flex justify-content-center h-100">
                     <div className="card card-signup">
                         <div className="card-header">
-                            <h3>Add Location</h3>
+                            <h3>Update Location</h3>
                         </div>
                         <div className="card-body">
                             <form onSubmit={this.onSubmit}>

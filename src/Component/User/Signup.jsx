@@ -73,9 +73,7 @@ export default function UserSignup() {
     email,
     password,
     error,
-    loading,
     msg,
-    showForm,
   } = values;
 
   const onChangeHandler = (inputFieldName) => (e) => {
@@ -90,7 +88,7 @@ export default function UserSignup() {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (!(firstName == "" || lastName == "" || email == "" || password == "")) {
+    if (!(firstName === "" || lastName === "" || email === "" || password === "")) {
       const user = {
         firstName: firstName,
         lastName: lastName,

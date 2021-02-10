@@ -17,6 +17,7 @@ export default class UserHome extends React.Component {
     axios
       .get(serverUrl + "/bookings/")
       .then((response) => {
+        console.log(response.data);
         this.setState({
           events: response.data,
         });
@@ -44,7 +45,6 @@ export default class UserHome extends React.Component {
             <tr>
               <th>Arrival Date</th>
               <th>Departure Date</th>
-              <th>Location</th>
               <th>Hotel Info</th>
               <th>Note</th>
               <th>Delete</th>
@@ -63,8 +63,6 @@ export default class UserHome extends React.Component {
                         year: "numeric",
                         month: "long",
                         day: "2-digit",
-                        hour: "numeric",
-                        minute: "numeric",
                       }).format(new Date(item["arrivalDate"]))}
                     </td>
                     <td>
@@ -72,12 +70,33 @@ export default class UserHome extends React.Component {
                         year: "numeric",
                         month: "long",
                         day: "2-digit",
-                        hour: "numeric",
-                        minute: "numeric",
                       }).format(new Date(item["departureDate"]))}
                     </td>
-                    <td>{item["locations"]}</td>
-                    <td>{item["hotelInfo"]}</td>
+                    <td>{item["hotelInfo"] === "1" ? (
+                        <div>One-Star</div>
+                    ) : (
+                      <span style={{ display: "none" }}> Empty </span>
+                    )}
+                    {item["hotelInfo"] === "2" ? (
+                        <div>Two-Star</div>
+                    ) : (
+                      <span style={{ display: "none" }}> Empty </span>
+                    )}
+                    {item["hotelInfo"] === "3" ? (
+                        <div>Three-Star</div>
+                    ) : (
+                      <span style={{ display: "none" }}> Empty </span>
+                    )}
+                    {item["hotelInfo"] === "4" ? (
+                        <div>Four-Star</div>
+                    ) : (
+                      <span style={{ display: "none" }}> Empty </span>
+                    )}
+                    {item["hotelInfo"] === "5" ? (
+                        <div>Five-Star</div>
+                    ) : (
+                      <span style={{ display: "none" }}> Empty </span>
+                    )}</td>
                     <td>{item["note"]}</td>
                     <td>
                       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

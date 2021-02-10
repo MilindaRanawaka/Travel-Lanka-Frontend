@@ -13,6 +13,7 @@ import AddLocation from "../Location/AddLocation";
 import UpdateLocation from "../Location/UpdateLocation";
 import UpdateUser from "../User/UpdateUser";
 import UserHome from "../User/UserHome";
+import AddTrip from "../Booking/AddTrip";
 
 //Contain all the user routes
 function Dashboard() {
@@ -64,6 +65,8 @@ function Dashboard() {
             <PrivateRoute component={AddLocation} path="/add-location" AccessBy={"admin"} exact />
             <PrivateRoute component={UpdateLocation} path="/updatelocation/:id" AccessBy={"admin"} exact />
             <PrivateRoute component={UpdateUser} path="/update-user" AccessBy={"user"} exact />
+            <PrivateRoute component={UpdateUser} path="/update-admin" AccessBy={"admin"} exact />
+            <PrivateRoute component={AddTrip} path="/add-trip" AccessBy={"user"} exact />
             <PrivateRoute component={UpdateUser} path="/update-admin" AccessBy={"admin"} exact />
 
             {/*Authorized Only Routes

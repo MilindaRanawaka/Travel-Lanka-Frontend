@@ -103,7 +103,7 @@ export default class AddLocation extends React.Component {
                                       <i className="fas fa-id-card" />
                                     </span>
                                     </div>
-                                    <input
+                                    <textarea
                                         type="text"
                                         className="form-control"
                                         placeholder="Location Description"

@@ -60,7 +60,7 @@ export default class Navbar extends React.Component {
                     {this.state.isLogin ? (
                       <div>
                         {this.state.isLogin &&
-                        localStorage.getItem(TOKEN_TYPE) === "customer" ? (
+                        localStorage.getItem(TOKEN_TYPE) === "admin" ? (
                           <div>
                             <a
                               className="navbar-brand"
@@ -70,7 +70,7 @@ export default class Navbar extends React.Component {
                               How Covid-19 in Sri Lanka?
                             </a>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href="/update-user/" className="loged-info">
+                            <a href="/update-admin/" className="loged-info">
                               Update My Info
                             </a>
                             <a href="/add-location" className="loged-info">

@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1537551080512-fb7dd14fbf90?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=sander-don-sGg_8msiIt0-unsplash.jpg)",
+      "url(https://images.unsplash.com/photo-1537551080512-fb7dd14fbf90?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=sander-don-sGg_8msiIt0-unsplash.jpg&w=1920)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -67,7 +67,7 @@ export default function UserLogin() {
     showForm: true,
   });
 
-  const { email, password, error, loading, msg, showForm } = values;
+  const { email, password, error } = values;
 
   const onChangeHandler = (inputFieldName) => (e) => {
     setValues({
@@ -100,7 +100,7 @@ export default function UserLogin() {
   };
 
   return (
-    <Grid container marginTop={"0px"} component="main" className={classes.root}>
+    <Grid container margintop={"0px"} component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>

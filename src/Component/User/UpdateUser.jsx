@@ -5,7 +5,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -15,7 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import { serverUrl, TOKEN_ID } from "../config";
+import { serverUrl, TOKEN_ID, TOKEN_TYPE } from "../config";
 
 toast.configure();
 
@@ -94,9 +93,7 @@ export default function UpdateUser() {
     email,
     password,
     error,
-    loading,
     msg,
-    showForm,
   } = values;
 
   const onChangeHandler = (inputFieldName) => (e) => {
@@ -115,7 +112,7 @@ export default function UpdateUser() {
       lastName: lastName,
       email: email,
       password: password,
-      type: "user",
+      type: localStorage.getItem(TOKEN_TYPE),
     };
 
     axios
@@ -143,7 +140,7 @@ export default function UpdateUser() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign Up
+            Update Information
           </Typography>
           <form onSubmit={submitHandler} className={classes.form}>
             <Grid container spacing={2}>

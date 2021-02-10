@@ -8,7 +8,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { NavLink } from "react-router-dom";
 import { serverUrl } from "../config";
@@ -50,14 +49,10 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function CheckLogin() {
-  return isLogin;
-}
-
 export default function HomePage() {
   const classes = useStyles();
 
-  const { isLoading, error, sendRequest, errorPopupCloser } = useHttpHandler();
+  const { isLoading, sendRequest } = useHttpHandler();
   const [loadedLocations, setLoadedLocations] = useState();
 
   useEffect(() => {
@@ -130,7 +125,7 @@ export default function HomePage() {
           {loadedLocations && !isLoading && (
             <Grid container spacing={4}>
               {loadedLocations.map((card) => (
-                <Grid item key={card.id} xs={12} sm={6} md={4}>
+                <Grid item key={card["_id"]} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
